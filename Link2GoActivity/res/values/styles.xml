@@ -1,0 +1,127 @@
+<resources>
+    <style name="AppTheme" parent="android:Theme.Light" />
+    <style name="AppTheme" parent="android:style/Theme.NoTitleBar"></style>
+    
+    <!--     Layouts 	-->
+    <style name="container_white">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/padding_container</item>
+        <item name="android:background">@color/background_color</item>
+    </style>
+    
+    <style name="container">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/padding_container</item>
+    </style>
+    
+    <style name="scrollView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    
+<!--     Widgets	 -->
+    <style name="champInput" parent="@android:style/Widget.EditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:padding">@dimen/padding_element</item>
+        <item name="android:background">@drawable/input</item>
+    </style>
+    <style name="champInputMultiline" parent="@android:style/Widget.EditText">
+        <item name="android:layout_height">@dimen/imputMultiline</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:padding">@dimen/padding_element</item>
+        <item name="android:background">@drawable/input</item>
+        <item name="android:gravity">top</item>
+    </style>
+    
+    <style name="spinner" parent="@android:style/Widget.Spinner">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:padding">@dimen/padding_element</item>
+    </style>
+    
+    <style name="text" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/base_text</item>
+    </style>
+    
+    <style name="textCell" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="textDetail" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/base_text</item>
+    </style>
+    
+    <style name="textBold" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="titleScreen" parent="@android:style/Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+    
+    <style name="button" parent="@android:style/Widget.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:padding">@dimen/padding_element</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:layout_marginTop">@dimen/padding_element</item>
+        <item name="android:layout_marginBottom">@dimen/padding_element</item>
+    </style>
+    
+    <style name="buttonHome" parent="@android:style/Widget.Button">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:padding">@dimen/padding_element</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:layout_marginTop">@dimen/padding_element</item>
+        <item name="android:layout_marginBottom">@dimen/padding_element</item>
+    </style>
+    
+    <style name="layoutTable">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item> 
+    </style>
+    
+    <style name="layoutRow">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">@dimen/padding_element</item>
+    </style>
+    
+    <style name="Scroller">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/slider_back</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+    
+<!--     ACTION BAR CUSTOMISATION 		-->
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/scrollView">
+    <LinearLayout
+	    style="@style/container"
+	    android:orientation="vertical">
+	
+	    <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="20dip"
+	        android:src="@drawable/logo"
+	        android:contentDescription="@string/desc_logo"/>
+	
+	    <TextView 
+	        android:text="@string/label_login"
+	        style="@style/text"/>
+	    
+	    <EditText
+	        android:id="@+id/login"
+	        style="@style/champInput"
+	        android:hint=""
+	        android:inputType="text"/>
+	    
+	    <TextView 
+	        android:text="@string/label_password"
+	        style="@style/text"/>
+	    
+	    <EditText
+	        android:id="@+id/mdp"
+	        style="@style/champInput"
+	        android:hint=""
+	        android:inputType="textPassword"/>
+	    
+	    <Button 
+	        android:onClick="tryConnect"
+	        style="@style/button"
+	        android:text="@string/label_connect"/>
+	    
+	        <TextView 
+	        android:text="@string/inscription"
+	        style="@style/text"
+	        android:layout_gravity="center"
+	        android:clickable="true"
+	        android:onClick="goInscription"/>
+	        
+	        <TextView 
+	        android:text="@string/forgot_passwordQ"
+	        style="@style/text"
+	        android:layout_gravity="center"
+	        android:clickable="true"
+	        android:onClick="goForgotPassword"/>
+	    
+	</LinearLayout>
+	
+</ScrollView>

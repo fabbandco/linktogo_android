@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+   <Button 	style="@style/button"
+			android:id="@+id/UpdateList"
+			android:layout_margin="2dip"
+			android:text="Mise à jour des sms" />
+	<ListView android:id="@+id/SMSList" 
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent" 
+			android:layout_margin="2dip" />
+</RelativeLayout>

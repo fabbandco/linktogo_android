@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_container">10dip</dimen>
+    <dimen name="padding_element">5dip</dimen>
+    <dimen name="base_text_size">12dip</dimen>
+    <dimen name="title_text_size">16dip</dimen>
+    <dimen name="imputMultiline">70dip</dimen>
+</resources>

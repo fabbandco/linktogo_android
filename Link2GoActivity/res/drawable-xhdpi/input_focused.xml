@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <stroke android:width="2dp" android:color="@color/stroke" />
+    <gradient 
+        android:startColor="@color/background_input" 
+        android:endColor="@color/background_input"
+        android:angle="270" />
+    <corners 
+        android:radius="3dp" />
+    
+</shape>

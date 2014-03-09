@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Linktogo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_link2_go"> Link To Go </string>
+	<string name="menu_quit">Quit</string>
+	<string name="desc_logo">Link to Go</string>
+	<string name="label_login">Email</string>
+	<string name="label_password">Mot de passe</string>
+	<string name="forgot_passwordQ">Mot de passe oublié</string>
+	<string name="label_connect">Se connecter</string>
+	<string name="inscription">S\'inscrire</string>
+	<string name="menu_search">Search</string>	
+	<string name="labelMdpLost">Entrez votre email</string>
+	<string name="btnLabelMdpLost">Envoyer</string>
+	<string name="label_message_save">Message sauvegardé avec succès</string>
+	<string name="label_message_not_save">Le message na pas été envoyé \nEnvoi au prochainement</string>
+	
+	<string name="timeout_error">Requete trop longue</string>
+	<string name="server_error">Erreur serveur (500)</string>
+	<string name="not_found_error">Erreur serveur (404)</string>
+	<string name="json_error">Erreur Json</string>
+	<string name="no_data_error">Erreur aucune data</string>
+	
+	
+	<string name="label_pb_connection_login">Login ou mot de passe incorrecte</string>
+	<string name="label_requete_envoye">Requete envoyé \n Surveille ton email</string>
+	
+				
+</resources>
