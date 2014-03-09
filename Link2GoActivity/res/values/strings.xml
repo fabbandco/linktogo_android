@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Linktogo</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Link-to-go</string>
+    <string name="title_activity_link2_go">Link-to-go </string>
+    <string name="menu_home">Home</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_link2_go"> Link To Go </string>
 	<string name="menu_quit">Quit</string>
 	<string name="desc_logo">Link to Go</string>
 	<string name="label_login">Email</string>
@@ -15,6 +15,9 @@
 	<string name="btnLabelMdpLost">Envoyer</string>
 	<string name="label_message_save">Message sauvegardé avec succès</string>
 	<string name="label_message_not_save">Le message na pas été envoyé \nEnvoi au prochainement</string>
+	<string name="label_message_sender">Message reçu</string>
+	<string name="label_message_sent">Message envoyé</string>
+	
 	
 	<string name="timeout_error">Requete trop longue</string>
 	<string name="server_error">Erreur serveur (500)</string>

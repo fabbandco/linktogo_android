@@ -111,6 +111,31 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		smsListView.setOnItemClickListener( this );
 	}
 	
+	public void onClickOutbox( View v ) 
+	{
+		ContentResolver contentResolver = getContentResolver();
+		Cursor cursor = contentResolver.query( Uri.parse( "content://sms/sent" ), null, null, null, null);
+
+		int indexBody = cursor.getColumnIndex( SmsReceiver.BODY );
+		int indexAddr = cursor.getColumnIndex( SmsReceiver.ADDRESS );
+		
+		if ( indexBody < 0 || !cursor.moveToFirst() ) return;
+		
+		smsList.clear();
+		
+		do
+		{
+			String str = "Sent : " + cursor.getString( indexAddr ) + "\n" + cursor.getString( indexBody );
+			smsList.add( str );
+		}
+		while( cursor.moveToNext() );
+
+		
+		ListView smsListView = (ListView) findViewById( R.id.SMSList );
+		smsListView.setAdapter( new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, smsList) );
+		smsListView.setOnItemClickListener( this );
+	}
+	
 	@SuppressLint("NewApi")
 	public boolean makeNotification(String titre ,String message) {
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)

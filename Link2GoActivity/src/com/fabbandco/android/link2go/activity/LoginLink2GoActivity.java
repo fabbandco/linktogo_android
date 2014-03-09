@@ -1,7 +1,5 @@
 package com.fabbandco.android.link2go.activity;
 
-import java.util.Collection;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;

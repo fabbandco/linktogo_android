@@ -2,12 +2,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-   <Button 	style="@style/button"
-			android:id="@+id/UpdateList"
-			android:layout_margin="2dip"
-			android:text="Mise à jour des sms" />
-	<ListView android:id="@+id/SMSList" 
-			android:layout_height="wrap_content" 
-			android:layout_width="match_parent" 
-			android:layout_margin="2dip" />
+    
+    <LinearLayout
+	    style="@style/container"
+	    android:orientation="vertical">
+	
+        <Button style="@style/button"
+				android:id="@+id/UpdateList"
+				android:layout_margin="2dip"
+				android:text="@string/label_message_sender" 
+				android:onClick="onClick"/>
+	   <Button 	style="@style/button"
+				android:id="@+id/UpdateListSent"
+				android:layout_margin="2dip"
+				android:text="@string/label_message_sent"
+				android:onClick="onClickOutbox"/>
+		<ListView android:id="@+id/SMSList" 
+				android:layout_height="wrap_content" 
+				android:layout_width="match_parent" 
+				android:layout_margin="2dip" />
+		
+	</LinearLayout>
 </RelativeLayout>
