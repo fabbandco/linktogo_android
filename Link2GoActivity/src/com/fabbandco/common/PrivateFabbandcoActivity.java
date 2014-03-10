@@ -5,10 +5,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
-import com.fabbandco.android.application.PersistanceApplication;
 import com.fabbandco.android.link2go.R;
 import com.fabbandco.android.link2go.activity.Link2GoActivity;
-import com.fabbandco.android.link2go.activity.LoginLink2GoActivity;
+import com.fabbandco.android.link2go.activity.LogOutLink2GoActivity;
 import com.fabbandco.android.link2go.activity.SettingLink2GoActivity;
 import com.google.analytics.tracking.android.EasyTracker;
 
@@ -40,9 +39,7 @@ public class PrivateFabbandcoActivity extends FabbandcoActivity {
 	 }
 	 
 	 public Intent onClickQuit (){
-		 PersistanceApplication.getInstance().setConnecte(false);
-		 PersistanceApplication.getInstance().setUser(null);
-		 return  new Intent(this,LoginLink2GoActivity.class);
+		 return  new Intent(this,LogOutLink2GoActivity.class);
 	 }
 	 
 	  @Override

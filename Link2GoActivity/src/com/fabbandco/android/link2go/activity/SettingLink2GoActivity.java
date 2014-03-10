@@ -19,7 +19,13 @@ public class SettingLink2GoActivity extends PrivateFabbandcoActivity implements 
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-    	majView();
+    	// Page setting
+    	 if (!PersistanceApplication.getInstance().isConnecte()){
+	        	Intent i = new Intent(this,LoginLink2GoActivity.class);
+	        	startActivity(i);
+	        }else{
+	        	majView();
+	        }
     	viewMessagesErrors();
     }
     

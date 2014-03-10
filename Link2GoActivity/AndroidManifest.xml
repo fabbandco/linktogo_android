@@ -37,6 +37,8 @@
         </activity>
         <activity android:name=".activity.LoginLink2GoActivity" >
         </activity>
+        <activity android:name=".activity.LogOutLink2GoActivity" >
+        </activity>
         <activity android:name=".activity.MdpLostLink2GoActivity" >
         </activity>
 
