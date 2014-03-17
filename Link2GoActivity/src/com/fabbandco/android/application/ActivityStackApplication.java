@@ -10,7 +10,7 @@ import com.fabbandco.android.model.Utilisateur;
 public class ActivityStackApplication {
 
 	static private ActivityStackApplication _instance;
-	private Hashtable <Class ,Activity> hasActivity = null;
+	private Hashtable <String ,Activity> hasActivity = null;
 	
 
 	static public ActivityStackApplication getInstance() {
@@ -21,12 +21,10 @@ public class ActivityStackApplication {
 	}
 	
 	
-//	static public Activity addHashActivity (Class classT , Activity activity){
-//		if (getInstance().hasActivity.get(classT)!=null){
-//			return getInstance().hasActivity.get(classT);
-//		}
-//		
-//		getInstance().hasActivity.put(classT, activity);
-//		return
-//	}
+	static public void addHashActivity (final String nomActivity,final Activity activity){
+		ActivityStackApplication app = getInstance();
+		if (app.hasActivity.get(nomActivity)==null){
+			getInstance().hasActivity.put(nomActivity, activity);
+		}
+	}
 }

@@ -128,7 +128,6 @@ public class CallRestWeb {
 					return (jsonObject.getString("results")).toString();
 				}
 			}
-				
 		}else{
 			//error
 			return null;

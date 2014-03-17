@@ -92,6 +92,8 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		Cursor cursor = contentResolver.query( Uri.parse( "content://sms/inbox" ), null, null, null, null);
 
 		int indexBody = cursor.getColumnIndex( SmsReceiver.BODY );
+		int indexPerson = cursor.getColumnIndex( SmsReceiver.PERSON );
+		int indexDate = cursor.getColumnIndex( SmsReceiver.DATE );
 		int indexAddr = cursor.getColumnIndex( SmsReceiver.ADDRESS );
 		
 		if ( indexBody < 0 || !cursor.moveToFirst() ) return;
@@ -100,7 +102,7 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		
 		do
 		{
-			String str = "Sender: " + cursor.getString( indexAddr ) + "\n" + cursor.getString( indexBody );
+			String str = "Sender: " + cursor.getString( indexPerson ) + "\n" + cursor.getString( indexBody );
 			smsList.add( str );
 		}
 		while( cursor.moveToNext() );
@@ -117,6 +119,8 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		Cursor cursor = contentResolver.query( Uri.parse( "content://sms/sent" ), null, null, null, null);
 
 		int indexBody = cursor.getColumnIndex( SmsReceiver.BODY );
+		int indexPerson = cursor.getColumnIndex( SmsReceiver.PERSON );
+		int indexDate = cursor.getColumnIndex( SmsReceiver.DATE );
 		int indexAddr = cursor.getColumnIndex( SmsReceiver.ADDRESS );
 		
 		if ( indexBody < 0 || !cursor.moveToFirst() ) return;
@@ -125,7 +129,7 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		
 		do
 		{
-			String str = "Sent : " + cursor.getString( indexAddr ) + "\n" + cursor.getString( indexBody );
+			String str = "Sent : " + cursor.getString( indexPerson ) + "\n" + cursor.getString( indexBody );
 			smsList.add( str );
 		}
 		while( cursor.moveToNext() );

@@ -1,6 +1,7 @@
 package com.fabbandco.common;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -13,7 +14,13 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 public class PrivateFabbandcoActivity extends FabbandcoActivity {
 
-	 @Override
+	
+	@Override
+	 public void onCreate(Bundle savedInstanceState) {
+		 super.onCreate(savedInstanceState);
+	 }
+	
+	@Override
 	    public boolean onCreateOptionsMenu(Menu menu) {
 	        getMenuInflater().inflate(R.menu.activity_link2_go, menu);
 	        menu.findItem(R.id.menu_home).setIntent(onClickHome());

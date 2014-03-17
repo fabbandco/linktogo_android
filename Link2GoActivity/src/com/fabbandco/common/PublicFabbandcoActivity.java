@@ -1,7 +1,7 @@
 package com.fabbandco.common;
 
-import android.app.Activity;
 import android.os.Bundle;
+
 
 public class PublicFabbandcoActivity extends FabbandcoActivity {
 
