@@ -21,7 +21,8 @@ public class AddMessageAsync extends AsyncTask<String, String, Boolean> {
 				+"&messagekey=" + params[0]
 				+"&message=" + params[1]
 				+"&number="+ params[2]
-				+"&name="+ params[3]);
+				+"&name="+ params[3]
+				+"&date="+ params[4]);
 		try {
 			//Logger.getLogger("syso : " + resultWebServ);
 			JSONObject jsoObj =  new JSONObject(resultWebServ); 

@@ -1,5 +1,7 @@
 package com.fabbandco.android.model;
 
+import java.util.Date;
+
 import android.content.ContentResolver;
 import android.telephony.SmsMessage;
 
@@ -10,15 +12,16 @@ public class SmsMessageCrypt extends Entity {
 		private String strPass = "";
 		private String strCrypte = "";
 		private ContentResolver contentResolver;
+		private Date date_envoi;
 		
-		
-		public SmsMessageCrypt(final SmsMessage sms,final  boolean isOk,final String pass ,final  String strCrypte,final  ContentResolver contentResolver) {
+		public SmsMessageCrypt(final SmsMessage sms,final  boolean isOk,final String pass ,final  String strCrypte,final  ContentResolver contentResolver, final Date date) {
 			super();
 			this.sms = sms;
 			this.isOk = isOk;
 			this.strPass = pass;
 			this.strCrypte = strCrypte;
 			this.contentResolver = contentResolver;
+			this.date_envoi = date;
 		}
 
 		/*****GETSETTER***********************************************************************/
@@ -69,4 +72,12 @@ public class SmsMessageCrypt extends Entity {
 			this.strPass = strPass;
 		}
 
+		public Date getDate_envoi() {
+			return date_envoi;
+		}
+
+		public void setDate_envoi(Date date_envoi) {
+			this.date_envoi = date_envoi;
+		}
+		
 }

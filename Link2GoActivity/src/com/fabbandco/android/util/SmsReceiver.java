@@ -1,6 +1,7 @@
 package com.fabbandco.android.util;
 
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -75,21 +76,24 @@ public class SmsReceiver extends BroadcastReceiver
             
             String encryptedPassword = "";
             encryptedPassword = URLEncoder.encode(messages+"");
+            SmsMessageCrypt smsCrypt = new SmsMessageCrypt(smExt, false, pass,encryptedPassword, contentResolver,new Date());
             if (PersistanceApplication.getInstance().isConnecte() && smExt!=null){
-            	SmsMessageCrypt smsCrypt = new SmsMessageCrypt(smExt, false, pass,encryptedPassword, contentResolver);
             	smsCrypt.setOk(true);
         		this.colSmsMessageCrypts.add(smsCrypt);
         	}else{
-        		SmsMessageCrypt smsCrypt = new SmsMessageCrypt(smExt, false, pass, encryptedPassword, contentResolver);
-            	smsCrypt.setOk(false);
+        		smsCrypt.setOk(false);
         		this.colSmsMessageCrypts.add(smsCrypt);
         	}
             
             // Envoi des Messages 
             if (PersistanceApplication.getInstance().isConnecte() && smExt!=null){
-            	for (SmsMessageCrypt object : this.colSmsMessageCrypts) {
-            		AddMessageAsync addMess = new AddMessageAsync(this);
-            		addMess.execute(URLEncoder.encode(object.getStrPass()+""),object.getStrCrypte(),URLEncoder.encode(object.getSms().getOriginatingAddress()+""),URLEncoder.encode(object.getSms().getOriginatingAddress()+""));
+            	try {
+	            	for (SmsMessageCrypt object : this.colSmsMessageCrypts) {
+	            		AddMessageAsync addMess = new AddMessageAsync(this);
+	            		addMess.execute(URLEncoder.encode(object.getStrPass()+""),object.getStrCrypte(),URLEncoder.encode(object.getSms().getOriginatingAddress()+""),URLEncoder.encode(object.getSms().getOriginatingAddress()+""), DateUtil.formatDateWithSecond(object.getDate_envoi()));
+					}
+            	} catch (ParseException e) {
+					System.out.println(e.getMessage());
 				}
         	}
          }
