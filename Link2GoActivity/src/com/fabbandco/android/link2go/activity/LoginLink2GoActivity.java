@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fabbandco.android.application.ActivityStackApplication;
 import com.fabbandco.android.application.Link2GoApplication;
 import com.fabbandco.android.application.PersistanceApplication;
 import com.fabbandco.android.async.LoginAsync;

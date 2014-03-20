@@ -34,8 +34,8 @@ public class SettingLink2GoActivity extends PrivateFabbandcoActivity implements 
    
     private void majView (){
     	setContentView(R.layout.activity_setting_link2_go);
-    	Toast to = Toast.makeText(this.getApplicationContext(), "Ecran setting", Constante.duration_toast);
-		to.show();
+//    	Toast to = Toast.makeText(this.getApplicationContext(), "Ecran setting", Constante.duration_toast);
+//		to.show();
     }
 
 	@Override

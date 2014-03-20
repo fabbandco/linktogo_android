@@ -7,16 +7,22 @@
 	    style="@style/container"
 	    android:orientation="vertical">
 	
-        <Button style="@style/button"
-				android:id="@+id/UpdateList"
-				android:layout_margin="2dip"
-				android:text="@string/label_message_sender" 
-				android:onClick="onClick"/>
-	   <Button 	style="@style/button"
-				android:id="@+id/UpdateListSent"
-				android:layout_margin="2dip"
-				android:text="@string/label_message_sent"
-				android:onClick="onClickOutbox"/>
+        <Button
+            android:id="@+id/UpdateList"
+            style="@style/button"
+            android:layout_height="80dp"
+            android:layout_margin="2dip"
+            android:onClick="onClick"
+            android:text="@string/label_message_sender" />
+
+	   <Button
+	       android:id="@+id/UpdateListSent"
+	       style="@style/button"
+	       android:layout_height="80dp"
+	       android:layout_margin="2dip"
+	       android:onClick="onClickOutbox"
+	       android:text="@string/label_message_sent" />
+
 		<ListView android:id="@+id/SMSList" 
 				android:layout_height="wrap_content" 
 				android:layout_width="match_parent" 

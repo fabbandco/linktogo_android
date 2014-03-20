@@ -2,11 +2,11 @@
 <resources>
     <color name="background_color">#FFF</color>
     <color name="base_text">#222</color>
-    <color name="start_color_button">#606060</color>
-    <color name="end_color_button">#066060</color>
-    <color name="color_light">#BDDEC1</color>
-    <color name="stroke">#066060</color>
+    <color name="start_color_button">#919197</color>
+    <color name="end_color_button">#FFFFFF</color>
+    <color name="color_light">#919197</color>
+    <color name="stroke">#919197</color>
     <color name="background_input">#FFF</color>
     <color name="stroke_input">#000</color>
-    <color name="pressed_sent">#CC51b35f</color>
+    <color name="pressed_sent">#7272E2</color>
 </resources>

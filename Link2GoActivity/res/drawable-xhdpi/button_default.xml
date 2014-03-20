@@ -4,8 +4,7 @@
     <stroke android:width="2dp" android:color="@color/stroke" />
     <gradient 
         android:startColor="@color/start_color_button" 
-        android:endColor="@color/end_color_button"
-        android:angle="270"/>
+        android:endColor="@color/end_color_button"/>
     <corners 
         android:radius="3dp" />
     

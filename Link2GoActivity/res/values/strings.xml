@@ -17,6 +17,7 @@
 	<string name="label_message_not_save">Le message na pas été envoyé \nEnvoi au prochainement</string>
 	<string name="label_message_sender">Message reçu</string>
 	<string name="label_message_sent">Message envoyé</string>
+	<string name="label_is_connect">Application connectée</string>
 	
 	
 	<string name="timeout_error">Requete trop longue</string>

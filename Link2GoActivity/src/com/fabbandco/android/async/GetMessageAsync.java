@@ -1,11 +1,14 @@
 package com.fabbandco.android.async;
 
+import java.util.Date;
+
 import org.json.JSONObject;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.fabbandco.android.application.PersistanceApplication;
+import com.fabbandco.android.model.SmsMessageCrypt;
 import com.fabbandco.android.util.CallRestWeb;
 import com.fabbandco.android.util.SmsReceiver;
 
@@ -37,7 +40,7 @@ public class GetMessageAsync extends AsyncTask<String, String, Boolean> {
 
 	@Override
     protected void onPostExecute(final Boolean _isOk) {
-		this.smsActivite.callBackAsync(_isOk);
+		this.smsActivite.callBackAsync(new SmsMessageCrypt(null, false, "", "", null, new Date()));
     }
 
 }

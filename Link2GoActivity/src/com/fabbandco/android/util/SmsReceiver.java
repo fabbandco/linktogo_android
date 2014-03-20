@@ -27,6 +27,9 @@ public class SmsReceiver extends BroadcastReceiver
 	
 	private Collection<SmsMessageCrypt> colSmsMessageCrypts = new ArrayList<SmsMessageCrypt>();
 	
+	/****************************************************************************************
+	 * 
+	 ***************************************************************************************/
 	public static final String SMS_EXTRA_NAME = "pdus";
 	public static final String SMS_URI = "content://sms";
 	
@@ -77,20 +80,17 @@ public class SmsReceiver extends BroadcastReceiver
             String encryptedPassword = "";
             encryptedPassword = URLEncoder.encode(messages+"");
             SmsMessageCrypt smsCrypt = new SmsMessageCrypt(smExt, false, pass,encryptedPassword, contentResolver,new Date());
-            if (PersistanceApplication.getInstance().isConnecte() && smExt!=null){
-            	smsCrypt.setOk(true);
-        		this.colSmsMessageCrypts.add(smsCrypt);
-        	}else{
-        		smsCrypt.setOk(false);
-        		this.colSmsMessageCrypts.add(smsCrypt);
-        	}
+            getColSmsMessageCrypts().add(smsCrypt);
+            
             
             // Envoi des Messages 
             if (PersistanceApplication.getInstance().isConnecte() && smExt!=null){
             	try {
-	            	for (SmsMessageCrypt object : this.colSmsMessageCrypts) {
-	            		AddMessageAsync addMess = new AddMessageAsync(this);
-	            		addMess.execute(URLEncoder.encode(object.getStrPass()+""),object.getStrCrypte(),URLEncoder.encode(object.getSms().getOriginatingAddress()+""),URLEncoder.encode(object.getSms().getOriginatingAddress()+""), DateUtil.formatDateWithSecond(object.getDate_envoi()));
+	            	for (SmsMessageCrypt object : getColSmsMessageCrypts()) {
+	            		if (!object.isOk()){
+		            		AddMessageAsync addMess = new AddMessageAsync(this);
+		            		addMess.execute(URLEncoder.encode(object.getStrPass()+""),object.getStrCrypte(),URLEncoder.encode(object.getSms().getOriginatingAddress()+""),URLEncoder.encode(object.getSms().getOriginatingAddress()+""), DateUtil.formatDateWithSecond(object.getDate_envoi()));
+	            		}
 					}
             	} catch (ParseException e) {
 					System.out.println(e.getMessage());
@@ -101,19 +101,39 @@ public class SmsReceiver extends BroadcastReceiver
 	
 	
 	
-	public void callBackAsync (final Boolean _isok){
-			if ( _isok){
-				Toast to = Toast.makeText(PersistanceApplication.getInstance().getCurrentApplication(), R.string.label_message_save, Constante.duration_toast);
-        		to.show();
+	public void callBackAsync (final SmsMessageCrypt _smsCrypte){
+			Toast to = null;
+			if (_smsCrypte.isOk()){
+				majColSmsMessageCrypts(_smsCrypte.getStrPass());
+				to = Toast.makeText(PersistanceApplication.getInstance().getCurrentApplication(), R.string.label_message_save, Constante.duration_toast);
+				
 			}else{
-				Toast to = Toast.makeText(PersistanceApplication.getInstance().getCurrentApplication(), R.string.label_message_not_save, Constante.duration_toast);
-        		to.show();
+				to = Toast.makeText(PersistanceApplication.getInstance().getCurrentApplication(), R.string.label_message_not_save, Constante.duration_toast);
 			}
+			to.show();
 	}
 	
 	 /***********************************************************************************************
 	  * Private
 	  **********************************************************************************************/
+	private synchronized Collection<SmsMessageCrypt> getColSmsMessageCrypts() {
+		return colSmsMessageCrypts;
+	}
+	
+	private synchronized void  setColSmsMessageCrypts(Collection<SmsMessageCrypt> newColSms) {
+		this.colSmsMessageCrypts=newColSms;
+	}
+	
+	private synchronized void majColSmsMessageCrypts (final String _key){
+		Collection<SmsMessageCrypt> colOut = new ArrayList<SmsMessageCrypt>();
+		for (SmsMessageCrypt smsMessageCrypt : this.getColSmsMessageCrypts()) {
+			if (!smsMessageCrypt.getStrCrypte().equals(_key) || smsMessageCrypt.isOk()){
+				colOut.add(smsMessageCrypt);
+			}
+		}
+		
+		this.setColSmsMessageCrypts(colOut);
+	}
 	
 	private void putSmsToDatabase(final ContentResolver contentResolver, final SmsMessage sms, final String encryptedPassword )
 	{
@@ -127,4 +147,9 @@ public class SmsReceiver extends BroadcastReceiver
        	values.put( BODY, encryptedPassword );
         contentResolver.insert(Uri.parse( SMS_URI ), values );
 	}
+
+
+
+	
+
 }

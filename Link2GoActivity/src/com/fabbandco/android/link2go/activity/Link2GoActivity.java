@@ -22,6 +22,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
+import com.fabbandco.android.application.ActivityStackApplication;
 import com.fabbandco.android.application.PersistanceApplication;
 import com.fabbandco.android.link2go.R;
 import com.fabbandco.android.model.Utilisateur;
@@ -38,7 +39,7 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
     	  if (!PersistanceApplication.getInstance().isConnecte()){
-	        	Intent i = new Intent(this,LoginLink2GoActivity.class);
+    		  	Intent i = new Intent(this,LoginLink2GoActivity.class);
 	        	startActivity(i);
 	        }else{
 	        	majView();
@@ -102,7 +103,7 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		
 		do
 		{
-			String str = "Sender: " + cursor.getString( indexPerson ) + "\n" + cursor.getString( indexBody );
+			String str = "Sender: " + cursor.getString( indexAddr ) + "\n" + cursor.getString( indexBody );
 			smsList.add( str );
 		}
 		while( cursor.moveToNext() );
@@ -129,7 +130,7 @@ public class Link2GoActivity extends PrivateFabbandcoActivity implements OnClick
 		
 		do
 		{
-			String str = "Sent : " + cursor.getString( indexPerson ) + "\n" + cursor.getString( indexBody );
+			String str = "Sent : " + cursor.getString( indexAddr ) + "\n" + cursor.getString( indexBody );
 			smsList.add( str );
 		}
 		while( cursor.moveToNext() );

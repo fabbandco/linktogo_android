@@ -31,6 +31,7 @@
         <item name="android:padding">@dimen/padding_element</item>
         <item name="android:background">@drawable/input</item>
     </style>
+    
     <style name="champInputMultiline" parent="@android:style/Widget.EditText">
         <item name="android:layout_height">@dimen/imputMultiline</item>
         <item name="android:layout_width">match_parent</item>
@@ -90,7 +91,7 @@
         <item name="android:layout_marginTop">@dimen/padding_element</item>
         <item name="android:layout_marginBottom">@dimen/padding_element</item>
     </style>
-    
+  
     <style name="buttonHome" parent="@android:style/Widget.Button">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>

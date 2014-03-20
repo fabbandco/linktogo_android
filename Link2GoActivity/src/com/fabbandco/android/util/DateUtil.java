@@ -142,5 +142,10 @@ public class DateUtil {
 		SimpleDateFormat spf = new SimpleDateFormat("yyyyMMddHHmmss");
 		return spf.format(date);
 	}
+	public static Date formatDateWithSecond(final String strdate) throws ParseException {
+		SimpleDateFormat spf = new SimpleDateFormat("yyyyMMddHHmmss");
+		return spf.parse(strdate);
+	}
+	
 	
 }
